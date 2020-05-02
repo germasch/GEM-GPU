@@ -26,6 +26,8 @@ endif()
 
 if (CMAKE_Fortran_COMPILER_ID STREQUAL "GNU")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -ffree-line-length-none")
+elseif (CMAKE_Fortran_COMPILER_ID STREQUAL "PGI")
+  set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -Minfo=accel")
 endif()
 
 add_subdirectory(code)
